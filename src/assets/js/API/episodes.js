@@ -1,3 +1,5 @@
+import { getCharacter } from "./characters.js";
+
 export function getEpisodes(url = "https://rickandmortyapi.com/api/episode") {
     axios
         .get(url)
@@ -7,7 +9,6 @@ export function getEpisodes(url = "https://rickandmortyapi.com/api/episode") {
                     `${episode.id} ${episode.name}`
                 );
                 item.on("click", function () {
-                    console.log(episode);
                     const title = $(
                         `<h1 class=informationDisplay__title></h1>`
                     ).text(episode.name);
@@ -30,6 +31,11 @@ export function getEpisodes(url = "https://rickandmortyapi.com/api/episode") {
                                 const name = $(`<p>${data.name}</p>`);
                                 const specie = $(`<p>${data.species}</p>`);
                                 const status = $(`<p>${data.status}</p>`);
+
+                                card.on("click", function () {
+                                    getCharacter(data.url);
+                                });
+
                                 card.append(image);
                                 card.append(name);
                                 card.append(specie);

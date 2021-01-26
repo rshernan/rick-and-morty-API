@@ -1,2 +1,158 @@
 @import url("./_reset.css");
 @import url("./_variables.css");
+
+* {
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary-color) var(--primary-color);
+}
+
+*::-webkit-scrollbar {
+    width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--secondary-color);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 20px;
+    border: 3px solid var(--secondary-color);
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button {
+    background-color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+    outline: 2px solid var(--secondary-color);
+    outline-offset: -2px;
+    color: white;
+}
+
+button:hover {
+    box-shadow: none;
+    outline-offset: 2px;
+}
+
+.sidebar__section {
+    background-color: var(--primary-color);
+    align-items: center;
+    transition: width 0.4s linear, height 0.4s linear;
+}
+
+.sidebar__section--fold {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0vw;
+    height: 100vh;
+}
+
+.sidebar__section--unfold {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    width: 30vw;
+    height: 100vh;
+}
+
+.sidebar__buttonClose {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 50px;
+    height: 50px;
+}
+
+.mainPage__button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 50px;
+    height: 50px;
+}
+
+.sidebar__ul {
+    margin-top: 70px;
+    width: 90%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    overflow-y: auto;
+}
+
+.sidebar__li {
+    padding: 10px;
+    width: 98%;
+    height: 50px;
+    background-color: var(--secondary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+
+.sidebar__buttonMore {
+    width: max-content;
+    height: 50px;
+    margin-top: 10px;
+}
+
+.informationDisplay__section {
+    display: flex;
+    flex-direction: column;
+    height: 85vh;
+    width: 90vw;
+    padding: 3em;
+    font-size: 18px;
+    color: white;
+    background-color: var(--primary-color);
+}
+
+.informationDisplay__title {
+    font-size: 30px;
+    margin: 0 0 1em 0;
+}
+
+.characterList__section {
+    margin-top: 3em;
+    align-self: center;
+    display: flex;
+    width: 100%;
+    height: 80%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap: 10px;
+
+    overflow-y: auto;
+}
+
+.characterList__image {
+    margin-top: 2em;
+    width: 200px;
+    height: 200px;
+}
+
+.characterList__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--secondary-color);
+    width: calc(25% - 10px);
+    height: 300px;
+}
